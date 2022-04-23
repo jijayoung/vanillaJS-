@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vanilla Challenge</title>
+    <meta charset="UTF-8" />
+  </head>
+  <style>
+      .hidden{display:none}
+  </style>
+  <body>
+    <form id="randomNumGame">
+        <h1>Random Number Game</h1>
+        <div><b>Generate a number between 0 and </b><input type="number" id="numUser" min="0"></div>
+        <div>Guess the number : <input type="number" id="numGuess"> <button id="btnPlay">Play!</button></div>
+    </form>
+    <div id="result" class="hidden">
+        <p>
+            You chose : <span id="numYouChose"></span>, the machine chose : <span id="numMachineChose" min="0"></span>.
+        </p>
+        <p>
+            <b>You <span id="resultTxt"></span>!</b>
+        </p>
+    </div>
+
+    <script> 
+const randomNumGame = document.querySelector("#randomNumGame");
+const numUser = randomNumGame.querySelector("#numUser");
+const numGuess = randomNumGame.querySelector("#numGuess");
+const result = document.querySelector("#result");
+const HIDDEN_CLASS = "hidden";
+
+function onSubmit(e){
+    e.preventDefault();
+
+    const numUserValue =  parseInt(numUser.value);
+    const numGuessValue = parseInt(numGuess.value);
+    
+    numGuess.setAttribute('max',numUserValue);
+
+    result.querySelector("#numYouChose").innerText = numGuessValue;
+    
+    const numMachineValue = Math.ceil(Math.random() * numUserValue);
+    result.querySelector("#numMachineChose").innerText = numMachineValue;
+
+    console.log(numGuessValue,numMachineValue)
+
+    if (isNaN(numGuessValue) || isNaN(numMachineValue)){
+        alert('please write number');
+    } else{
+        if(numGuessValue === numMachineValue) {
+            result.querySelector("#resultTxt").innerText = 'won';
+        } else{
+            result.querySelector("#resultTxt").innerText = 'lose';
+        }
+        result.classList.remove(HIDDEN_CLASS);
+    }
+
+   
+}
+randomNumGame.addEventListener("submit",onSubmit)
+
+
+
+    </script>
+  </body>
+</html>

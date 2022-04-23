@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Time Until Christmas Eve<</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <h1>Time Until Christmas Eve</h1>
+    <h2 class="js-clock"></h2>
+
+
+
+
+
+
+    <script> 
+        const clockTitle = document.querySelector(".js-clock");
+
+
+        function clock(){
+            const christmas = new Date('2022,12,25').getTime();
+            const today = new Date().getTime();
+            const gapTime  = christmas - today;
+
+            const date = Math.floor(gapTime/ (1000 * 60 * 60 * 24));
+            const hours = String(Math.floor((gapTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2,'0');
+            const minutes = String(Math.floor((gapTime % (1000 * 60 * 60)) / (1000 * 60))).padStart(2,'0');
+            const seconds = String(Math.floor((gapTime % (1000 * 60)) / 1000)).padStart(2,'0');
+            
+            clockTitle.innerText = `${date}d ${hours}h ${minutes}m ${seconds}s`  
+        }
+        clock();
+        setInterval(clock,1000);
+    </script>
+
+
+  </body>
+</html>
