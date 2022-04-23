@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+*{color: #fff;margin:0;padding:0;font-family:"Open Sans", sans-serif;font-style:normal}
+body, html {overflow: hidden; height: 100%; width: 100%;}
+body{display: flex;align-items: center;justify-content: center;}
+
+.hidden{display:none}
+input{color: #000;height:30px;padding:0;border:0;padding-left:15px;padding-right:15px;font-size:15px}
+input[type="submit"]{background:#fff;color: #333;}
+
+#wrap {display: flex;align-items: center;flex-direction: column;}
+
+#weather{position: fixed;right:20px;top:20px;}
+#weather *{vertical-align:top;height:25px;line-height:25px;font-size:14px}
+
+#clock{font-size:80px;letter-spacing:-2px;text-align: center;line-height:1}
+
+#login-form{padding:50px 0;}
+#todo-form input{width:300px;}
+
+#todo-list{padding:20px 0}
+#todo-list li{padding:5px 0}
+#todo-list li button {color:#000;padding-left:5px;padding-right:5px;display:inline-block;margin-left:10px}
+
+
+h1{font-size:25px;padding:50px 0}
+
+#weather strong{display:inline-block;width:25px;height:25px;border-radius:10px;background-color:#fff;background-repeat:no-repeat;background-position:center center;background-size:120% 120%}

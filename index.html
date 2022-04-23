@@ -4,10 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vanilla Challange</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+
+<div id="weather">
+    <span></span>
+    <em></em>
+    <strong></strong>
+</div>
+
+<div id="wrap">
+    <div id="clock"></div>
+    
+    <form id="login-form" class="hidden">
+        <input type="text" required="15" placeholder="What is your name?">
+        <input type="submit" value="Log In">
+    </form>
+
+    <h1 class="hidden" id="greeting"></h1>
+
+
+    <form id="todo-form">
+        <input type="text" placeholder="Write a To Do and Press Enter" required>
+    </form>
+    <ul id="todo-list"></ul>
+</div>
+
     <script src="app.js"></script>
 </body>
 </html>
